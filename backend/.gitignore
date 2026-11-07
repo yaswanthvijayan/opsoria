@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+*.py[cod]
+.env
+.pytest_cache/
+.idea/
+.vscode/
+.retained_cache.json
+opsoria.db
+*.db
+*.db-wal
+*.db-shm
+

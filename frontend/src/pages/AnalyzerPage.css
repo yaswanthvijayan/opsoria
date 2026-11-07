@@ -1,0 +1,60 @@
+.analyzer-header {
+  margin-bottom: 2rem;
+}
+
+.analyzer-header h1 {
+  margin-bottom: 0.5rem;
+}
+
+.analyzer-subtitle {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+@media (max-width: 768px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.form-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border-subtle);
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.submit-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.rate-limit-note {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.results-section {
+  margin-top: 2.5rem;
+}
+
+.results-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+

@@ -1,0 +1,434 @@
+[
+  {
+    "incident_id": "INC-SYNTH-072237",
+    "service": "synthetic payment-service",
+    "environment": "synthetic-staging",
+    "status": "resolved",
+    "symptoms": "[SYNTHETIC TEST RECORD] High p99 latency in payment checkout flow exceeding 5000ms. Intermittent database connection pool timeouts under simulated black-friday peak load.",
+    "possible_causes": [
+      "PostgreSQL pool exhaustion under burst load",
+      "Synthetic payment gateway webhook latency"
+    ],
+    "metadata": {
+      "type": "synthetic_test"
+    },
+    "confirmed_resolution": "[STATUS: SYNTHETIC TEST RECORD - NOT A PRODUCTION RESOLUTION] Increased the database connection pool size and added a pool timeout in synthetic staging. Synthetic test data for demonstration only; no real service health check was performed.",
+    "memory_status": "persisted",
+    "is_synthetic": 1,
+    "last_analysis": {
+      "incident_id": "INC-SYNTH-072237",
+      "service": "synthetic payment-service",
+      "environment": "synthetic-staging",
+      "status": "resolved",
+      "symptoms": "[SYNTHETIC TEST RECORD] High p99 latency in payment checkout flow exceeding 5000ms. Intermittent database connection pool timeouts under simulated black-friday peak load.",
+      "historical_match_count": 5,
+      "historical_context": [
+        {
+          "document_id": "968ae724-5a74-4bf7-9857-b8e64d2be4f9",
+          "text": "Incident OPS-TEST-001 occurred in the synthetic payment-service on the synthetic-staging environment.",
+          "memory_type": "observation",
+          "scores": {
+            "final": 1.0,
+            "semantic": 0.8225663900375366,
+            "keyword": 5.4132981300354
+          },
+          "tags": [
+            "synthetic-staging",
+            "synthetic payment-service",
+            "resolved"
+          ],
+          "metadata": {},
+          "is_synthetic": true
+        },
+        {
+          "document_id": "OPS-TEST-001",
+          "text": "Incident OPS-TEST-001 occurred in the synthetic payment-service on synthetic-staging environment, causing HTTP 503 errors after a deployment. | When: 2026-11-07 | Where: synthetic-staging",
+          "memory_type": "world",
+          "scores": {
+            "final": 0.8,
+            "semantic": 0.7979184985160828,
+            "keyword": 2.9845314025878906
+          },
+          "tags": [
+            "synthetic-staging",
+            "synthetic payment-service",
+            "resolved"
+          ],
+          "metadata": {
+            "incident_id": "OPS-TEST-001",
+            "service": "synthetic payment-service",
+            "environment": "synthetic-staging",
+            "status": "resolved",
+            "has_confirmed_resolution": "True"
+          },
+          "is_synthetic": true
+        },
+        {
+          "document_id": "8e7cf6d1-e8db-484b-beb9-08773af75da5",
+          "text": "Incident OPS-TEST-001 caused HTTP 503 errors after a deployment on 2026-11-07.",
+          "memory_type": "observation",
+          "scores": {
+            "final": 0.6,
+            "semantic": 0.6962300539016724,
+            "keyword": 0.749976396560669
+          },
+          "tags": [
+            "synthetic-staging",
+            "synthetic payment-service",
+            "resolved"
+          ],
+          "metadata": {},
+          "is_synthetic": true
+        },
+        {
+          "document_id": "OPS-TEST-001",
+          "text": "Incident OPS-TEST-001 was resolved by reverting an incompatible synthetic configuration update. | When: 2026-11-07 | Where: synthetic-staging",
+          "memory_type": "world",
+          "scores": {
+            "final": 0.4,
+            "semantic": 0.7219776511192322,
+            "keyword": 1.7826581001281738
+          },
+          "tags": [
+            "synthetic-staging",
+            "synthetic payment-service",
+            "resolved"
+          ],
+          "metadata": {
+            "incident_id": "OPS-TEST-001",
+            "service": "synthetic payment-service",
+            "environment": "synthetic-staging",
+            "status": "resolved",
+            "has_confirmed_resolution": "True"
+          },
+          "is_synthetic": true
+        },
+        {
+          "document_id": "ca7ad263-e3d5-4762-b37f-a33c38cad9ac",
+          "text": "Incident OPS-TEST-001 was resolved by reverting an incompatible synthetic configuration update.",
+          "memory_type": "observation",
+          "scores": {
+            "final": 0.2,
+            "semantic": 0.6480535864830017,
+            "keyword": 1.7293574810028076
+          },
+          "tags": [
+            "synthetic-staging",
+            "synthetic payment-service",
+            "resolved"
+          ],
+          "metadata": {},
+          "is_synthetic": true
+        }
+      ],
+      "investigation_summary": "Investigation for INC-SYNTH-072237 (synthetic payment-service - synthetic-staging):\nReported Symptoms: [SYNTHETIC TEST RECORD] High p99 latency in payment checkout flow exceeding 5000ms. Intermittent database connection pool timeouts under simulated black-friday peak load.\nCurrent Status: RESOLVED\n\n[HISTORICAL MEMORY CONTEXT]: Found 5 related memory records from 1 prior incident.\n  - Match #1 [OPS-TEST-001]: [SYNTHETIC TEST DATA - not a production fix] Incident OPS-TEST-001 occurred in the synthetic payment-service on the synthetic-staging environment.\n  - Match #2 [OPS-TEST-001]: [SYNTHETIC TEST DATA - not a production fix] Incident OPS-TEST-001 occurred in the synthetic payment-service on synthetic-staging environment, causing HTTP 503 errors after a deployment. | When: 2026-11-07 | Where: synthetic-staging\n  - Match #3 [OPS-TEST-001]: [SYNTHETIC TEST DATA - not a production fix] Incident OPS-TEST-001 caused HTTP 503 errors after a deployment on 2026-11-07.\n\n[CONFIRMED RESOLUTION]: [STATUS: SYNTHETIC TEST RECORD - NOT A PRODUCTION RESOLUTION] Increased the database connection pool size and added a pool timeout in synthetic staging. Synthetic test data for demonstration only; no real service health check was performed.",
+      "recommended_steps": [
+        "Review historical patterns from prior incidents (OPS-TEST-001).",
+        "Matched history includes synthetic test data and must NOT be treated as verified production guidance.",
+        "Verify post-incident monitoring metrics to ensure system stability.",
+        "Resolution confirmed and persisted in Opsoria memory bank."
+      ],
+      "confirmed_resolution": "[STATUS: SYNTHETIC TEST RECORD - NOT A PRODUCTION RESOLUTION] Increased the database connection pool size and added a pool timeout in synthetic staging. Synthetic test data for demonstration only; no real service health check was performed.",
+      "ai_label": "AI-generated hypotheses - UNVERIFIED. Not a confirmed root cause.",
+      "ai_status": null,
+      "ai_hypotheses": [],
+      "ai_investigation_plan": [],
+      "ai_caveats": []
+    },
+    "created_at": "2026-11-07T12:55:04.843644+00:00",
+    "updated_at": "2026-11-07T12:58:11.578650+00:00"
+  },
+  {
+    "incident_id": "INC-SYNTH-051098",
+    "service": "synthetic payment-service",
+    "environment": "synthetic-staging",
+    "status": "investigating",
+    "symptoms": "[SYNTHETIC TEST RECORD] High p99 latency in payment checkout flow exceeding 5000ms. Intermittent database connection pool timeouts under simulated black-friday peak load.",
+    "possible_causes": [
+      "PostgreSQL pool exhaustion under burst load",
+      "Synthetic payment gateway webhook latency"
+    ],
+    "metadata": {
+      "type": "synthetic_test"
+    },
+    "confirmed_resolution": null,
+    "memory_status": "not_applicable",
+    "is_synthetic": 1,
+    "last_analysis": {
+      "incident_id": "INC-SYNTH-051098",
+      "service": "synthetic payment-service",
+      "environment": "synthetic-staging",
+      "status": "investigating",
+      "symptoms": "[SYNTHETIC TEST RECORD] High p99 latency in payment checkout flow exceeding 5000ms. Intermittent database connection pool timeouts under simulated black-friday peak load.",
+      "historical_match_count": 10,
+      "historical_context": [
+        {
+          "document_id": "INC-SYNTH-072237",
+          "text": "Incident INC-SYNTH-072237 involved high p99 latency in the payment checkout flow and intermittent database connection pool timeouts under simulated peak load. | When: 2026-11-07 | Where: synthetic-staging",
+          "memory_type": "world",
+          "scores": {
+            "final": 1.0,
+            "semantic": 0.8967894911766052,
+            "keyword": 19.72490119934082
+          },
+          "tags": [
+            "synthetic-staging",
+            "synthetic payment-service",
+            "resolved"
+          ],
+          "metadata": {
+            "incident_id": "INC-SYNTH-072237",
+            "service": "synthetic payment-service",
+            "environment": "synthetic-staging",
+            "status": "resolved",
+            "has_confirmed_resolution": "True"
+          },
+          "is_synthetic": true
+        },
+        {
+          "document_id": "efdf0863-b8e4-4eb0-a5e6-a6e181f59240",
+          "text": "Incident INC-SYNTH-072237 involved high p99 latency in the payment checkout flow.",
+          "memory_type": "observation",
+          "scores": {
+            "final": 0.9,
+            "semantic": 0.8446100950241089,
+            "keyword": 11.572345733642578
+          },
+          "tags": [
+            "synthetic-staging",
+            "synthetic payment-service",
+            "resolved"
+          ],
+          "metadata": {},
+          "is_synthetic": true
+        },
+        {
+          "document_id": "85de5bc9-a5a4-40cb-a08f-b6b7dbfd1b05",
+          "text": "Incident INC-SYNTH-072237 involved intermittent database connection pool timeouts under simulated peak load.",
+          "memory_type": "observation",
+          "scores": {
+            "final": 0.8,
+            "semantic": 0.7799177765846252,
+            "keyword": 13.057296752929688
+          },
+          "tags": [
+            "synthetic-staging",
+            "synthetic payment-service",
+            "resolved"
+          ],
+          "metadata": {},
+          "is_synthetic": true
+        },
+        {
+          "document_id": "INC-SYNTH-072237",
+          "text": "The incident was resolved by increasing the database connection pool size and adding a pool timeout in the synthetic staging environment. | When: 2026-11-07 | Where: synthetic-staging",
+          "memory_type": "world",
+          "scores": {
+            "final": 0.7,
+            "semantic": 0.785593569278717,
+            "keyword": 6.02247953414917
+          },
+          "tags": [
+            "synthetic-staging",
+            "synthetic payment-service",
+            "resolved"
+          ],
+          "metadata": {
+            "incident_id": "INC-SYNTH-072237",
+            "service": "synthetic payment-service",
+            "environment": "synthetic-staging",
+            "status": "resolved",
+            "has_confirmed_resolution": "True"
+          },
+          "is_synthetic": true
+        },
+        {
+          "document_id": "1c5cf988-88b5-47b6-94a2-7545ff3cd6ca",
+          "text": "Incident INC-SYNTH-072237 was resolved by increasing the database connection pool size and adding a pool timeout in the synthetic staging environment.",
+          "memory_type": "observation",
+          "scores": {
+            "final": 0.6,
+            "semantic": 0.7321144342422485,
+            "keyword": 7.498768329620361
+          },
+          "tags": [
+            "synthetic-staging",
+            "synthetic payment-service",
+            "resolved"
+          ],
+          "metadata": {},
+          "is_synthetic": true
+        },
+        {
+          "document_id": "8e7cf6d1-e8db-484b-beb9-08773af75da5",
+          "text": "Incident OPS-TEST-001 caused HTTP 503 errors after a deployment on 2026-11-07.",
+          "memory_type": "observation",
+          "scores": {
+            "final": 0.5,
+            "semantic": 0.6962300539016724,
+            "keyword": 1.0697040557861328
+          },
+          "tags": [
+            "synthetic-staging",
+            "synthetic payment-service",
+            "resolved"
+          ],
+          "metadata": {},
+          "is_synthetic": true
+        },
+        {
+          "document_id": "968ae724-5a74-4bf7-9857-b8e64d2be4f9",
+          "text": "Incident OPS-TEST-001 occurred in the synthetic payment-service on the synthetic-staging environment.",
+          "memory_type": "observation",
+          "scores": {
+            "final": 0.4,
+            "semantic": 0.8225663900375366,
+            "keyword": 6.650722503662109
+          },
+          "tags": [
+            "synthetic-staging",
+            "synthetic payment-service",
+            "resolved"
+          ],
+          "metadata": {},
+          "is_synthetic": true
+        },
+        {
+          "document_id": "OPS-TEST-001",
+          "text": "Incident OPS-TEST-001 occurred in the synthetic payment-service on synthetic-staging environment, causing HTTP 503 errors after a deployment. | When: 2026-11-07 | Where: synthetic-staging",
+          "memory_type": "world",
+          "scores": {
+            "final": 0.3,
+            "semantic": 0.7979184985160828,
+            "keyword": 3.180304527282715
+          },
+          "tags": [
+            "synthetic-staging",
+            "synthetic payment-service",
+            "resolved"
+          ],
+          "metadata": {
+            "incident_id": "OPS-TEST-001",
+            "service": "synthetic payment-service",
+            "environment": "synthetic-staging",
+            "status": "resolved",
+            "has_confirmed_resolution": "True"
+          },
+          "is_synthetic": true
+        },
+        {
+          "document_id": "OPS-TEST-001",
+          "text": "Incident OPS-TEST-001 was resolved by reverting an incompatible synthetic configuration update. | When: 2026-11-07 | Where: synthetic-staging",
+          "memory_type": "world",
+          "scores": {
+            "final": 0.2,
+            "semantic": 0.7219776511192322,
+            "keyword": 1.7138513326644897
+          },
+          "tags": [
+            "synthetic-staging",
+            "synthetic payment-service",
+            "resolved"
+          ],
+          "metadata": {
+            "incident_id": "OPS-TEST-001",
+            "service": "synthetic payment-service",
+            "environment": "synthetic-staging",
+            "status": "resolved",
+            "has_confirmed_resolution": "True"
+          },
+          "is_synthetic": true
+        },
+        {
+          "document_id": "ca7ad263-e3d5-4762-b37f-a33c38cad9ac",
+          "text": "Incident OPS-TEST-001 was resolved by reverting an incompatible synthetic configuration update.",
+          "memory_type": "observation",
+          "scores": {
+            "final": 0.1,
+            "semantic": 0.6480535864830017,
+            "keyword": 2.187995433807373
+          },
+          "tags": [
+            "synthetic-staging",
+            "synthetic payment-service",
+            "resolved"
+          ],
+          "metadata": {},
+          "is_synthetic": true
+        }
+      ],
+      "investigation_summary": "Investigation for INC-SYNTH-051098 (synthetic payment-service - synthetic-staging):\nReported Symptoms: [SYNTHETIC TEST RECORD] High p99 latency in payment checkout flow exceeding 5000ms. Intermittent database connection pool timeouts under simulated black-friday peak load.\nCurrent Status: INVESTIGATING\n\n[HISTORICAL MEMORY CONTEXT]: Found 10 related memory records from 2 prior incidents.\n  - Match #1 [INC-SYNTH-072237]: [SYNTHETIC TEST DATA - not a production fix] Incident INC-SYNTH-072237 involved high p99 latency in the payment checkout flow and intermittent database connection pool timeouts under simulated peak load. | When: 2026-11-07 | Where: synthetic-sta...\n  - Match #2 [INC-SYNTH-072237]: [SYNTHETIC TEST DATA - not a production fix] Incident INC-SYNTH-072237 involved high p99 latency in the payment checkout flow.\n  - Match #3 [INC-SYNTH-072237]: [SYNTHETIC TEST DATA - not a production fix] Incident INC-SYNTH-072237 involved intermittent database connection pool timeouts under simulated peak load.\n\n[UNCONFIRMED HYPOTHESES TO INVESTIGATE]:\n  - Hypothesis (Unverified): PostgreSQL pool exhaustion under burst load\n  - Hypothesis (Unverified): Synthetic payment gateway webhook latency",
+      "recommended_steps": [
+        "Review historical patterns from prior incidents (INC-SYNTH-072237, OPS-TEST-001).",
+        "Matched history includes synthetic test data and must NOT be treated as verified production guidance.",
+        "Investigate hypothesis: 'PostgreSQL pool exhaustion under burst load' (Do not treat as confirmed until validated).",
+        "Investigate hypothesis: 'Synthetic payment gateway webhook latency' (Do not treat as confirmed until validated).",
+        "Inspect live telemetry, container logs, and recent deployment changes."
+      ],
+      "confirmed_resolution": null,
+      "ai_label": "AI-generated hypotheses - UNVERIFIED. Not a confirmed root cause.",
+      "ai_status": "success",
+      "ai_hypotheses": [
+        {
+          "title": "Database connection pool exhaustion causing high p99 latency",
+          "reasoning": "Intermittent database connection pool timeouts and high p99 latency observed under simulated peak load suggest that the pool may be exhausted during traffic spikes.",
+          "evidence_refs": [
+            "INC-SYNTH-072237"
+          ],
+          "confidence": "low",
+          "suggested_checks": [
+            "Verify current pool size and usage metrics during peak periods",
+            "Check for connection leaks or long-running queries",
+            "Compare pool timeout settings with observed timeout durations"
+          ]
+        },
+        {
+          "title": "Payment gateway webhook latency contributing to checkout flow delays",
+          "reasoning": "User-identified potential cause and known external dependency could introduce latency during checkout.",
+          "evidence_refs": [],
+          "confidence": "low",
+          "suggested_checks": [
+            "Measure round-trip time of webhook calls during peak load",
+            "Inspect gateway response times and error rates",
+            "Correlate webhook latency with checkout latency spikes"
+          ]
+        },
+        {
+          "title": "Resource contention under simulated peak load leading to overall latency",
+          "reasoning": "High p99 latency could be due to CPU/memory contention affecting multiple components, not just the database.",
+          "evidence_refs": [],
+          "confidence": "low",
+          "suggested_checks": [
+            "Monitor CPU, memory, and I/O utilization during peak load",
+            "Identify any bottlenecks in application or infrastructure layers",
+            "Check for contention on shared resources like locks or queues"
+          ]
+        },
+        {
+          "title": "Misconfigured pool timeout causing premature connection failures",
+          "reasoning": "Resolution involved adding a pool timeout; improper timeout settings could lead to frequent timeouts and latency.",
+          "evidence_refs": [
+            "INC-SYNTH-072237"
+          ],
+          "confidence": "low",
+          "suggested_checks": [
+            "Review current pool timeout configuration",
+            "Simulate load to test timeout behavior",
+            "Adjust timeout to balance between resource release and request latency"
+          ]
+        }
+      ],
+      "ai_investigation_plan": [
+        "Collect and analyze database pool metrics during peak load",
+        "Measure payment gateway webhook latency and error rates",
+        "Profile application performance under simulated traffic",
+        "Validate and adjust pool size and timeout settings"
+      ],
+      "ai_caveats": [
+        "Recalled history contains synthetic test data; not verified production guidance."
+      ]
+    },
+    "created_at": "2026-11-07T13:27:39.732514+00:00",
+    "updated_at": "2026-11-07T13:27:39.732514+00:00"
+  }
+]
